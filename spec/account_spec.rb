@@ -24,5 +24,10 @@ describe Account do
       account.withdraw(500)
       expect(account.balance).to eq 500
     end
+
+    it 'will tell a user that that there are not suffcient funds to cover the transaction' do
+      account.deposit(100)
+      expect { account.withdraw(500) }.to raise_error "Insufficient funds"
+    end
   end
 end
