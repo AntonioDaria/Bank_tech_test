@@ -7,10 +7,10 @@ describe 'feature deposit' do
   end
 
   it 'throws an error if the deposit is <= 0' do
-    expect { account.deposit(-50) }.to raise_error "Amount must be greater than 0"
+    expect { account.deposit(-50) }.to raise_error 'Amount must be greater than 0'
   end
 
   it 'throws an error if the deposit is not a valid number' do
-    expect { account.deposit("string") }.to raise_error "Amount must be a numeric value"
+    expect { account.deposit('string') }.to raise_error 'Amount must be a numeric value'
   end
 end

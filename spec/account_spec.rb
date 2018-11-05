@@ -9,25 +9,34 @@ describe Account do
       expect(account.balance).to eq 1000
     end
 
-    it 'will tell a user that the deposited amount must be greater than 0' do
-      expect { account.deposit(-50) }.to raise_error "Amount must be greater than 0"
+    context "When a user tries to deposit less than or equal to 0" do
+      it 'will tell a user that the deposited amount must be greater than 0' do
+        expect { account.deposit(-50) }.to raise_error 'Amount must be greater than 0'
+      end
     end
 
-    it 'will tell a user that the deposited amount must be a numeric value' do
-      expect { account.deposit("string") }.to raise_error "Amount must be a numeric value"
+    context "When a user doesn't input a numeric value" do
+      it 'will tell a user that the deposited amount must be a numeric value' do
+        expect { account.deposit('string') }.to raise_error 'Amount must be a numeric value'
+      end
     end
   end
 
   describe '#withdraw do' do
-    it 'allows a user to withdraw funds' do
-      account.deposit(1000)
-      account.withdraw(500)
-      expect(account.balance).to eq 500
+    context " When the user has enough funds " do
+      it 'allows a user to withdraw funds' do
+        account.deposit(1000)
+        account.withdraw(500)
+        expect(account.balance).to eq 500
+
+      end
     end
 
-    it 'will tell a user that that there are not suffcient funds to cover the transaction' do
-      account.deposit(100)
-      expect { account.withdraw(500) }.to raise_error "Insufficient funds"
+    context "when the user has not got enough funds" do
+      it 'will tell a user that that there are not suffcient funds to cover the transaction' do
+        account.deposit(100)
+        expect { account.withdraw(500) }.to raise_error 'Insufficient funds'
+      end
     end
   end
 end

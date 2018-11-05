@@ -9,7 +9,6 @@ describe 'feature withdraw' do
 
   it 'throws an error if the amount is greater than the available funds' do
     account.deposit(100)
-    expect { account.withdraw(500) }.to raise_error "Insufficient funds"
+    expect { account.withdraw(500) }.to raise_error 'Insufficient funds'
   end
-
 end
