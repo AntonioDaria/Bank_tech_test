@@ -15,7 +15,6 @@ class History_log
   end
 
   private
-
   def current_date
     Time.now.strftime('%d-%m-%Y')
   end
