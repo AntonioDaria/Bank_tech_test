@@ -1,7 +1,9 @@
 require 'account'
 
 describe Account do
-  subject(:account) { described_class.new }
+  subject(:account) { described_class.new(history_log) }
+  let(:history_log) {double :history_log, deposit_log: nil, withdraw_log: nil, view_statement: 'statement'}
+
 
   describe '#deposit do' do
     it 'allows a user to deposit funds' do
@@ -37,6 +39,12 @@ describe Account do
         account.deposit(100)
         expect { account.withdraw(500) }.to raise_error 'Insufficient funds'
       end
+    end
+  end
+
+  describe '#show_statement' do
+    it 'prints the bank statement' do
+      expect { account.show_statement }.to output("statement\n").to_stdout
     end
   end
 end

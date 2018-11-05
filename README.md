@@ -32,3 +32,11 @@ As a user
 So that I can keep on track of my finances
 I would like to view a bank statement in reverse chronological order
 ```
+### Bank statement format
+
+```
+date       || credit || debit || balance
+14/01/2012 ||        ||500.00 || 2500.00
+13/01/2012 ||2000.00 ||       || 3000.00
+10/01/2012 || 1000.00||       || 1000.00
+```
