@@ -1,7 +1,7 @@
 require_relative 'formatter'
 
 class History_log
-  attr_reader :history, :formatter
+  attr_reader :history
 
   def initialize(formatter = Formatter.new)
     @formatter = formatter
@@ -27,7 +27,7 @@ class History_log
   end
 
   def view_statement
-    formatter.formatting_statement(@history)
+    @formatter.formatting_statement(@history)
   end
 
   private
