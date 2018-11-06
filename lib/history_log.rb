@@ -9,7 +9,7 @@ class History_log
   end
 
   def log_deposit(money_in, balance)
-    @history  << {
+    @history << {
       date: current_date,
       balance: balance,
       credit: money_in
@@ -18,7 +18,7 @@ class History_log
   end
 
   def log_withdraw(money_out, balance)
-    @history  << {
+    @history << {
       date: current_date,
       balance: balance,
       debit: money_out
