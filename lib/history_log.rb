@@ -33,6 +33,6 @@ class History_log
   private
 
   def current_date
-    Time.now.strftime('%d-%m-%Y')
+    Time.now.strftime('%d/%m/%Y')
   end
 end
