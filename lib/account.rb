@@ -10,11 +10,13 @@ class Account
   def deposit(amount)
     valid_amount(amount)
     @balance += amount
+    @history_log.log_deposit(amount, @balance)
   end
 
   def withdraw(amount)
     sufficient_funds(amount)
     @balance -= amount
+    @history_log.log_withdraw(amount, @balance)
   end
 
   def show_statement

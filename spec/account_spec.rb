@@ -2,7 +2,7 @@ require 'account'
 
 describe Account do
   subject(:account) { described_class.new(history_log) }
-  let(:history_log) {double :history_log, deposit_log: nil, withdraw_log: nil, view_statement: 'statement'}
+  let(:history_log) {double :history_log, log_deposit: nil, log_withdraw: nil, view_statement: 'statement'}
 
 
   describe '#deposit do' do
