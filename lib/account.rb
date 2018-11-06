@@ -1,5 +1,7 @@
 require 'history_log'
 class Account
+  DEFAULT_BALANCE = 0
+
   attr_reader :balance, :history_log
 
   def initialize(log = History_log.new)
@@ -27,7 +29,7 @@ class Account
 
   def valid_amount(amount)
     raise 'Amount must be a numeric value' unless amount.is_a? Numeric
-    raise 'Amount must be greater than 0' if amount <= 0
+    raise 'Amount must be greater than 0' if amount <= DEFAULT_BALANCE
   end
 
   def sufficient_funds(amount)
