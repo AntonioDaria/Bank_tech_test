@@ -1,13 +1,13 @@
-##Bank Tech Test
+## Bank Tech Test
 This project features a command line Ruby app that simulates some of the main banking operations as deposit and withdraw of funds. The user can also print on screen a statement with all the transactions.
 
-## How to Use
+### How to Use
 - Clone this repo to your machine
 - Run `bundle install` to install gem dependencies
 - In your terminal run  pry and require './lib/account'
 - Interact with the app following the example below
 
-## Testing
+### Testing
 The app was fully tested using RSpec. and achieved 100%
 coverage
 
@@ -49,7 +49,7 @@ date || credit || debit || balance
 => nil
 
 ```
-## User Stories
+### User Stories
 
 ```
 As a user
