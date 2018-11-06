@@ -1,6 +1,6 @@
 describe History_log do
-  subject(:history_log) { described_class.new }
-  let(:formatter) {double :formatter, formatting_statement: 'statement'}
+  subject(:history_log) { described_class.new(formatter) }
+  let(:formatter) { double :formatter, formatting_statement: 'statement' }
 
   describe '#log_deposit' do
     it 'adds credit info to the history log' do
