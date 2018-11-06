@@ -1,6 +1,54 @@
 ##Bank Tech Test
+This project features a command line Ruby app that simulates some of the main banking operations as deposit and withdraw of funds. The user can also print on screen a statement with all the transactions.
+
+## How to Use
+- Clone this repo to your machine
+- Run `bundle install` to install gem dependencies
+- In your terminal run  pry and require './lib/account'
+- Interact with the app following the example below
+
+## Testing
+The app was fully tested using RSpec. and achieved 100%
+coverage
 
 
+### Example:
+
+Create a new account.
+```
+> Natwest = Account.new
+=> #<Account:0x00007f8b29025650 @balance=0, @history_log=#<History_log:0x00007f8b290254c0 @formatter=#<Formatter:0x00007f8b29024930>, @history=[]>>
+```
+
+Deposit funds.
+```
+> Natwest.deposit(1000)
+  => 1000
+```
+Deposit funds again.
+```
+> Natwest.deposit(2000)
+  => 1000
+```
+
+Whitdraw money
+```
+> Natwest.withdraw(500)
+  => 500
+```
+
+Check balance
+### Bank statement format
+```
+> Natwest.show_statement
+
+date || credit || debit || balance
+06-11-2018 ||  || 500.00 || 2500.00
+06-11-2018 || 2000.00 ||  || 3000.00
+06-11-2018 || 1000.00 ||  || 1000.00
+=> nil
+
+```
 ## User Stories
 
 ```
@@ -30,13 +78,5 @@ I would like to be able to see my account balance
 
 As a user
 So that I can keep on track of my finances
-I would like to view a bank statement in reverse chronological order
-```
-### Bank statement format
-
-```
-date       || credit || debit || balance
-14/01/2012 ||        ||500.00 || 2500.00
-13/01/2012 ||2000.00 ||       || 3000.00
-10/01/2012 || 1000.00||       || 1000.00
+I would like to view a bank statement with the newest transaction on the top
 ```
