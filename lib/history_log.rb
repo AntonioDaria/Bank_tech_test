@@ -14,6 +14,15 @@ class History_log
     @history.last.flatten
   end
 
+  def log_withdraw(money_out, balance)
+    @history  << {
+      date: current_date,
+      balance: balance,
+      debit: money_out
+    }
+    @history.last.flatten
+  end
+
   private
 
   def current_date

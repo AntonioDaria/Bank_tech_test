@@ -8,4 +8,11 @@ describe History_log do
         .to eq [:date, Time.now.strftime('%d-%m-%Y'), :balance, 300, :credit, 300]
     end
   end
+
+  describe '#log_withdraw' do
+    it 'adds info about withdrawal to the history log' do
+      expect(history_log.log_withdraw(100, 200))
+        .to eq [:date, Time.now.strftime('%d-%m-%Y'), :balance, 200, :debit, 100]
+    end
+  end
 end
