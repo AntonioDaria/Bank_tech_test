@@ -1,6 +1,6 @@
 require_relative 'formatter'
 
-class History_log
+class HistoryLog
   attr_reader :history
 
   def initialize(formatter = Formatter.new)

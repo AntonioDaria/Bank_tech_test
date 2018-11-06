@@ -1,4 +1,4 @@
-describe History_log do
+describe HistoryLog do
   subject(:history_log) { described_class.new(formatter) }
   let(:formatter) { double :formatter, formatting_statement: 'statement' }
 

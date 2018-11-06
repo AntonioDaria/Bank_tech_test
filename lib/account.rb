@@ -5,7 +5,7 @@ class Account
 
   attr_reader :balance, :history_log
 
-  def initialize(log = History_log.new)
+  def initialize(log = HistoryLog.new)
     @balance = 0
     @history_log = log
   end
