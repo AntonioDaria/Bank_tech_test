@@ -1,4 +1,5 @@
-require 'history_log'
+require_relative 'history_log'
+
 class Account
   DEFAULT_BALANCE = 0
 

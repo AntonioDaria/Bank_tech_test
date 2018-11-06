@@ -1,7 +1,10 @@
-class History_log
-  attr_reader :history
+require_relative 'formatter'
 
-  def initialize
+class History_log
+  attr_reader :history, :formatter
+
+  def initialize(formatter = Formatter.new)
+    @formatter = formatter
     @history = []
   end
 
@@ -21,6 +24,10 @@ class History_log
       debit: money_out
     }
     @history.last.flatten
+  end
+
+  def view_statement
+    formatter.formatting_statement(@history)
   end
 
   private
