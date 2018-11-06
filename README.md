@@ -37,10 +37,9 @@ Whitdraw money
   => 500
 ```
 ### Screenshot of running app
-```
+
 ![image](https://user-images.githubusercontent.com/24396579/48071766-f2f00c80-e1d2-11e8-8061-8a7e56bb7564.png)
 
-```
 
 Check balance
 ### Bank statement format
