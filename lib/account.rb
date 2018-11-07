@@ -3,7 +3,7 @@ require_relative 'history_log'
 class Account
   DEFAULT_BALANCE = 0
 
-  attr_reader :balance, :history_log
+  attr_reader :balance
 
   def initialize(log = HistoryLog.new)
     @balance = 0
@@ -13,17 +13,17 @@ class Account
   def deposit(amount)
     valid_amount(amount)
     @balance += amount
-    history_log.log_deposit(amount, @balance)
+    @history_log.log_deposit(amount, @balance)
   end
 
   def withdraw(amount)
     sufficient_funds(amount)
     @balance -= amount
-    history_log.log_withdraw(amount, @balance)
+    @history_log.log_withdraw(amount, @balance)
   end
 
   def show_statement
-    puts history_log.view_statement
+    puts @history_log.view_statement
   end
 
   private
