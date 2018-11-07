@@ -9,7 +9,7 @@ class HistoryLog
 
   def log_deposit(money_in, balance)
     @history << {
-      date: current_date,
+      date: Time.now,
       balance: balance,
       credit: money_in
     }
@@ -18,7 +18,7 @@ class HistoryLog
 
   def log_withdraw(money_out, balance)
     @history << {
-      date: current_date,
+      date: Time.now,
       balance: balance,
       debit: money_out
     }
@@ -29,9 +29,5 @@ class HistoryLog
     @formatter.formatting_statement(@history)
   end
 
-  private
 
-  def current_date
-    Time.now.strftime('%d/%m/%Y')
-  end
 end
